@@ -1,6 +1,6 @@
 var twoSum =function (nums, target) {
     let  response =new Array();
-    console.log("in two sum")
+   
 
     for(var x =0; x<nums.length; x++){
 
