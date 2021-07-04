@@ -35,9 +35,8 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 var twoSum =function (nums, target) {
     let  response =new Array();
-    console.log("in two sum")
-
-    for(var x =0; x<nums.length; x++){
+    
+   for(var x =0; x<nums.length; x++){
 
         var check= nums.slice(x+1);
 
