@@ -1,8 +1,7 @@
 var twoSum =function (nums, target) {
     let  response =new Array();
-   
-
-    for(var x =0; x<nums.length; x++){
+    
+   for(var x =0; x<nums.length; x++){
 
         var check= nums.slice(x+1);
 
