@@ -43,6 +43,7 @@ var twoSum =function (nums, target) {
         if  (check.includes(target-nums[x])){
 
              response.push(x);
+             response.push(nums.array.indexOf(target-nums));
             for (var y=x+1; y<nums.length; y++){
 
                 if(nums[y]+nums[x]=== target){
@@ -59,3 +60,20 @@ var twoSum =function (nums, target) {
 
 
     }
+
+    var twoSum1 =function (nums, target) {
+
+    var result = new Map(nums.map(key => [key.sid, key.name]));
+
+    result.get
+    console.dir(result);
+
+
+
+    }
+
+
+
+
+
+        }

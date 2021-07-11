@@ -10,24 +10,27 @@ public class ReUtils1 {
 
 
 
-    public Integer[] main() throws IOException {
+    public String[] readFile(String number) throws IOException {
+        String filepath = "src/main/resources/day";
+        String fileName= filepath+number+".txt";
 
 
 
 
 
-        String fileName = "src/main/resources/Day1_1.txt"; File file = new File(fileName);
+        //String fileName = "src/main/resources/Day1.txt";
+        File file = new File(fileName);
 
         List<String> fileLinesList = Files.readAllLines(file.toPath());
 
 
-        Integer [] fileLines = new Integer[fileLinesList.size()];
+        String [] fileLines = new String[fileLinesList.size()];
 
 
         int i=0;
 
 
-        for(Object line : fileLinesList) { fileLines[i++] =  Integer.valueOf((String) line);
+        for(Object line : fileLinesList) { fileLines[i++] =  ((String) line);
 
 
 
@@ -36,4 +39,10 @@ public class ReUtils1 {
        // System.out.println(Arrays.toString(fileLines));
 
         return fileLines;
-    }}
+    }
+
+ public Integer[] getIntarray(String[] stringarr){
+      Integer[] arr = Arrays.stream(stringarr).mapToInt(Integer::parseInt).boxed().toArray(Integer[]::new);
+      return arr;
+ }
+}

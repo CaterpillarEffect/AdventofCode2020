@@ -1,7 +1,8 @@
 var arr = new Int8Array();
 var fs = require("fs");
 function loadFile() {
-    var text = fs.readFileSync("Day1_1.txt").toString('utf-8');
+  //  var text = fs.readFileSync("Day1_1.txt").toString('utf-8');
+  var text = fs.readFileSync("main/resources/Day1.txt").toString('utf-8');
     arr = text.split("\n").map(Number);
 }
 
@@ -79,10 +80,10 @@ for(var z = x+2; z<nums.length; z++){
 
 var x =(addTwo(arr, 2020).toString());
 var z = (day1part2(arr, 2020).toString());
-
 var y= (day1(arr, 2020).toString());
 
-fs.writeFile('Day1jsanswer.txt', y+" this is the answer for part 1 "+ "  this is answer for part 2 "+z,  function(err) {
+fs.writeFile('main/java/Day1/Day1jsanswer.txt', y+" This is the answer for part 1 "+ "  this is answer for part 2 "+z,  function(err) {
+
    if (err) {
       return console.error(err);
    }

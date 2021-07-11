@@ -15,7 +15,8 @@ public class Day1 {
     public static void main(String[] args) throws IOException {
 
         ReUtils1 utils = new ReUtils1();
-        System.out.println("this is answer! " + addsum2020(utils.main()));
+        System.out.println("this is answer! " + addsum2020(utils.getIntarray(utils.readFile("1"))));
+        System.out.println("this is answer! " + addthree20201(utils.getIntarray(utils.readFile("1"))));
     }
 
     public static int addsum2020(Integer[] arr) {
@@ -55,22 +56,26 @@ public class Day1 {
         List<Integer> integers = Arrays.stream(arr) //Int str
                 .collect(Collectors.toList());
 
-        for (Integer integer : integers) {
-            OptionalInt any =
-                   integers.stream()
-                            .filter(x -> integer + x== 2020)
-                            .mapToInt(x -> integer * x).findAny();
+       outer: for (Integer x : integers) {
 
-            if (any.isPresent()) {
-                System.out.println(any);
-                int result = any.getAsInt();
-                System.out.println(result);
-                answer = result;
-                break;
+
+            for (Integer y: integers){
+
+                OptionalInt any =integers.stream()
+                        .filter(z->x+y+z==2020)
+                        .distinct()
+                        .mapToInt(z ->z*y*x)
+                        .findAny();
+
+
+                if (any.isPresent()) {
+                    int result = any.getAsInt();
+                    answer = result;
+                    break outer;
+                }
             }
-
-
         }
+
 
         return answer;
     }
