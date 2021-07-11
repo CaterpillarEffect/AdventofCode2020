@@ -33,10 +33,10 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
-var twoSum =function (nums, target) {
+var twoSum = function(nums, target) {
     let  response =new Array();
     
-   for(var x =0; x<nums.length; x++){
+    for(var x =0; x<nums.length; x++){
 
         var check= nums.slice(x+1);
 
@@ -60,6 +60,31 @@ var twoSum =function (nums, target) {
 
 
     }
+   return response;
+};
+
+// better solution :
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+   let response= new Array();
+    for (let i = 0; i < nums.length; i++) {
+var answer = nums.indexOf(target - nums[i]);
+if (answer >= 0 && answer !== i) {
+    response.push(i);
+    response.push(answer)
+return response;
+
+}
+}
+return response;
+}
+
+
 
     var twoSum1 =function (nums, target) {
 
