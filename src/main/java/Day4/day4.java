@@ -64,7 +64,7 @@ public class day4 {
 
     }
 
-//public static boolean checkcorrectformat(Map<String, String> map ){
+//public static boolean checkcorrectFormat(Map<String, String> map ){
 //    Matcher hcl;
 //    hcl = new Matcher();
 //
